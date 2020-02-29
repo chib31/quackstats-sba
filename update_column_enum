@@ -1,0 +1,7 @@
+#!/bin/bash
+
+rm src/main/java/uk/cbradbury/backend/enumerations/Column.java
+
+java -jar EnumCreator.jar column_meta.csv Column src/main/java/uk/cbradbury/backend/enumerations/Column.java
+
+echo Column Enum has been updated

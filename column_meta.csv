@@ -1,0 +1,41 @@
+VALUE,String key,String label,Boolean rawValue,Viewability viewability,boolean display,boolean filterable,SortType sortType,String formatter,boolean groupable,boolean grouped,String aggLabel,AggregateType aggregateType,Calculation aggCalculation,Viewability aggViewability,boolean aggDisplay,boolean rangeable,boolean aggRangeable
+AVERAGE_BAT,average_bat,,false,ALWAYS_HIDE,false,false,DESC,dec2Always,false,false,Average,COMPLEX,"new Calculation(RUNS, WICKETS_BATTING, 1)",OPTIONAL,true,false,false
+AVERAGE_BOWL,average_bowl,Average,true,OPTIONAL,true,false,ASC,dec2Always,false,false,Average,COMPLEX,"new Calculation(RUNS, WICKETS_BOWLING, 1)",OPTIONAL,true,false,false
+DATE,date,Date,true,OPTIONAL,false,false,DESC,,false,false,,,,ALWAYS_HIDE,false,false,false
+DELIVERIES,deliveries,Deliveries,true,OPTIONAL,true,false,DESC,,false,false,Deliveries,SUM,,OPTIONAL,true,true,true
+ECONOMY,economy,Economy,true,OPTIONAL,true,false,ASC,dec2Always,false,false,Economy,COMPLEX,"new Calculation(RUNS, DELIVERIES, 6)",OPTIONAL,true,false,true
+FIXTURE,fixture,Fixture,true,OPTIONAL,true,false,,,true,false,,,,ALWAYS_HIDE,false,false,false
+FOURS,fours,Fours,true,OPTIONAL,true,false,DESC,,false,false,Fours,SUM,,OPTIONAL,true,true,true
+GROUP_TERM,group_term,,false,ALWAYS_HIDE,false,false,,,false,false,GROUP_TERM,,,ALWAYS_SHOW,true,false,false
+ID,id,,true,ALWAYS_HIDE,false,false,,,false,false,,,,ALWAYS_HIDE,false,false,false
+INDEX,index,#,false,ALWAYS_SHOW,true,false,,,false,false,#,,,ALWAYS_SHOW,true,false,false
+INNINGS,innings,,true,ALWAYS_HIDE,false,false,DESC,,false,false,Innings,SUM,,OPTIONAL,true,false,true
+MAIDENS,maidens,Maidens,true,OPTIONAL,false,false,DESC,,false,false,Maidens,SUM,,OPTIONAL,false,true,true
+MATCH_FORMAT,match_format,Match Format,true,OPTIONAL,false,true,,,false,false,,,,ALWAYS_HIDE,false,false,false
+NO_BALLS,no_balls,No Balls,true,OPTIONAL,true,false,DESC,,false,false,No Balls,SUM,,OPTIONAL,false,true,true
+NOT_OUTS,not_outs,,true,ALWAYS_HIDE,false,false,DESC,,false,false,Not Outs,SUM,,OPTIONAL,false,false,true
+OPPOSITION,opposition,Opposition,true,OPTIONAL,false,true,,,true,false,,,,ALWAYS_HIDE,false,false,false
+OVER_LENGTH,over_length,Over Length,true,OPTIONAL,false,false,,,false,false,,,,ALWAYS_HIDE,false,false,false
+OVERS,overs,Overs,true,OPTIONAL,false,false,,,false,false,,,,ALWAYS_HIDE,false,false,false
+PERCENT_TOTAL,percent_total,% of Total,true,OPTIONAL,false,false,DESC,percent1Always,false,false,,,"",ALWAYS_HIDE,false,true,false
+PLAYER_NAME,player_name,Player,true,ALWAYS_SHOW,true,true,ASC,,true,false,,,,ALWAYS_HIDE,false,false,false
+POSITION,position,Position,true,OPTIONAL,false,true,ASC,dec2NoTrail,true,false,Avg Position,MEAN,,OPTIONAL,false,false,true
+RESULT,result,Result,true,OPTIONAL,false,true,,,true,false,,,,ALWAYS_HIDE,false,false,false
+RUNS,runs,Runs,true,OPTIONAL,true,false,DESC,,false,false,Runs,SUM,,OPTIONAL,true,true,true
+SEASON,season,Season,true,OPTIONAL,false,true,DESC,,true,false,,,,ALWAYS_HIDE,false,false,false
+STRIKE_RATE_BAT,strike_rate_bat,Strike Rate,true,OPTIONAL,true,false,DESC,dec2Always,false,false,Strike Rate,COMPLEX,"new Calculation(RUNS, DELIVERIES, 100)",OPTIONAL,true,true,true
+STRIKE_RATE_BOWL,strike_rate_bowl,Strike Rate,true,OPTIONAL,true,false,ASC,dec2Always,false,false,Strike Rate,COMPLEX,"new Calculation(DELIVERIES, WICKETS_BOWLING, 1)",OPTIONAL,true,true,true
+TEAM_TOTAL,team_total,Team Total,true,OPTIONAL,false,false,,,false,false,,SUM,,ALWAYS_HIDE,false,false,false
+WICKET_TYPE,wicket_type,Wicket Type,true,OPTIONAL,true,true,,,true,false,,,,ALWAYS_HIDE,false,false,false
+WICKETS_BATTING,wickets_batting,,true,ALWAYS_HIDE,false,false,DESC,,false,false,Wickets,SUM,,OPTIONAL,true,false,false
+WICKETS_BOWLING,wickets_bowling,Wickets,true,OPTIONAL,true,false,DESC,,false,false,Wickets,SUM,,OPTIONAL,true,true,true
+WIDES,wides,Wides,true,OPTIONAL,true,false,DESC,,false,false,Wides,SUM,,OPTIONAL,false,true,true
+SIXES,sixes,Sixes,true,OPTIONAL,true,false,DESC,,false,false,Sixes,SUM,,OPTIONAL,true,true,true
+CATCHES,catches,Catches,true,OPTIONAL,true,false,DESC,,false,false,Catches,SUM,,OPTIONAL,true,true,true
+RUN_OUTS,run_outs,Run Outs,true,OPTIONAL,true,false,DESC,,false,false,Run Outs,SUM,,OPTIONAL,true,true,true
+STUMPINGS,stumpings,Stumpings,true,OPTIONAL,true,false,DESC,,false,false,Stumpings,SUM,,OPTIONAL,true,true,true
+FIELDING_WICKETS,fielding_wickets,Wickets,true,OPTIONAL,true,false,DESC,,false,false,Wickets,SUM,,OPTIONAL,true,true,true
+BOWLER_NUMBER,bowler_number,Bowler Number,true,OPTIONAL,false,true,ASC,dec2NoTrail,true,false,Avg Bowler Number,MEAN,,OPTIONAL,false,false,false
+HAT_TRICKS,hat_tricks,Hat Tricks,true,OPTIONAL,false,false,DESC,,false,false,Hat Tricks,SUM,,OPTIONAL,false,false,false
+INNINGS_LENGTH,innings_length,Innings Length,true,OPTIONAL,true,false,DESC,,false,false,,,,ALWAYS_HIDE,false,true,true
+FIELDING_MATCHES,fielding_matches,Matches,true,ALWAYS_HIDE,false,false,ASC,,false,false,Matches,SUM,,OPTIONAL,true,false,true
