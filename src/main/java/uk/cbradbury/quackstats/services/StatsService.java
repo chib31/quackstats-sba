@@ -90,11 +90,12 @@ public class StatsService {
       map.put("aggViewability", col.getAggViewability());
       map.put("aggDisplay", col.getAggDisplay());
       map.put("aggRangeable", col.getAggRangeable());
+      map.put("filterRange", List.of());
 
       map.put("displayOrder", sCol.getDisplayOrder());
       map.put("aggDisplayOrder", sCol.getAggDisplayOrder());
       map.put("sortPriority", sCol.getSortOrder());
-      map.put("selectFilters", sCol.getSelectFilters());
+      map.put("selectFilters", sCol.getSelectFilters().size() > 0 ? sCol.getSelectFilters() : null);
 
       columnList.add(map);
     }

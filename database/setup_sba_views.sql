@@ -67,7 +67,7 @@ CREATE OR REPLACE VIEW fixture_summary AS
     END result_details
   , f.over_length
   , date_part('year', f.date) season
-  , o.name || ' (' || TO_CHAR(f.date, 'dth-Mon-yy') || ', ' || f.innings_length || ' overs)' fixture
+  , o.name || ' (' || TO_CHAR(f.date, 'fmDDth Mon yy') || ', ' || f.innings_length || ' overs)' fixture
   FROM fixture f
   JOIN team o ON f.opposition_id = o.id
   JOIN team t ON f.team_id = t.id
