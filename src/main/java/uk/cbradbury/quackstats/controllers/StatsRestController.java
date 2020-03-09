@@ -18,7 +18,7 @@ public class StatsRestController {
 
   @RequestMapping(path = "/stats")
   public @ResponseBody
-  StatResponse fetchReport(@RequestParam StatType statType) {
+  StatResponse fetchReport(@RequestParam("statType") StatType statType) {
     return statsService.fetchStats(statType);
   }
 }

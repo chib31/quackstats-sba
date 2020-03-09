@@ -160,6 +160,8 @@ CREATE OR REPLACE VIEW player_bowling_summary AS
   , pbi.deliveries::decimal / NULLIF(pbi.wickets::decimal, 0) strike_rate_bowl
   , pbi.deliveries::decimal / NULLIF(pbi.wides::decimal, 0) deliveries_per_wide
   , pbi.deliveries::decimal / NULLIF(pbi.no_balls::decimal, 0) deliveries_per_no_ball
+  , (SELECT SUM(w.batter_runs) FROM wicket w WHERE w.bowler_id = sm.id) victim_runs
+  , (SELECT SUM(w.batting_position) FROM wicket w WHERE w.bowler_id = sm.id) victim_position
   FROM player_bowling_innings pbi
   JOIN squad_member sm ON pbi.squad_member_id = sm.id
   JOIN player_summary ps ON sm.player_id = ps.id

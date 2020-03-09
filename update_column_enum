@@ -1,7 +1,9 @@
 #!/bin/bash
 
-rm src/main/java/uk/cbradbury/backend/enumerations/Column.java
+path=C:/Users/chib3/projects/quackstats-sba/src/main/java/uk/cbradbury/quackstats/enumerations
 
-java -jar EnumCreator.jar column_meta.csv Column src/main/java/uk/cbradbury/backend/enumerations/Column.java
+rm $path/Column.java
+
+java -jar EnumCreator.jar column_meta.csv Column $path/Column.java
 
 echo Column Enum has been updated

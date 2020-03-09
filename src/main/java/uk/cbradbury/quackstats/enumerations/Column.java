@@ -1,16 +1,14 @@
 package uk.cbradbury.quackstats.enumerations;
 
+import uk.cbradbury.quackstats.enumerations.column_meta.*;
+
 import uk.cbradbury.quackstats.entities.Calculation;
-import uk.cbradbury.quackstats.enumerations.column_meta.AggregateType;
-import uk.cbradbury.quackstats.enumerations.column_meta.SortType;
-import uk.cbradbury.quackstats.enumerations.column_meta.Viewability;
 
 import static uk.cbradbury.quackstats.enumerations.column_meta.AggregateType.*;
-import static uk.cbradbury.quackstats.enumerations.column_meta.SortType.ASC;
-import static uk.cbradbury.quackstats.enumerations.column_meta.SortType.DESC;
+import static uk.cbradbury.quackstats.enumerations.column_meta.SortType.*;
 import static uk.cbradbury.quackstats.enumerations.column_meta.Viewability.*;
 
-public enum Column {
+public enum Column { 
 
   BOWLER_NUMBER("bowler_number","Bowler Number",true,OPTIONAL,false,true,ASC,"dec2NoTrail",true,false,"Avg Bowler Number",MEAN,null,OPTIONAL,false,false,false),
   CATCHES("catches","Catches",true,OPTIONAL,true,false,DESC,null,false,false,"Catches",SUM,null,OPTIONAL,true,true,true),
@@ -28,7 +26,7 @@ public enum Column {
   INNINGS_LENGTH("innings_length","Innings Length",true,OPTIONAL,true,false,DESC,null,false,false,null,null,null,ALWAYS_HIDE,false,true,true),
   MAIDENS("maidens","Maidens",true,OPTIONAL,false,false,DESC,null,false,false,"Maidens",SUM,null,OPTIONAL,false,true,true),
   MATCH_FORMAT("match_format","Match Format",true,OPTIONAL,false,true,null,null,false,false,null,null,null,ALWAYS_HIDE,false,false,false),
-  NOT_OUTS("not_outs",null,true,ALWAYS_HIDE,false,false,null,null,false,false,"Not Outs",SUM,null,OPTIONAL,false,false,true),
+  NOT_OUTS("not_outs",null,true,ALWAYS_HIDE,false,false,DESC,null,false,false,"Not Outs",SUM,null,OPTIONAL,false,false,true),
   NO_BALLS("no_balls","No Balls",true,OPTIONAL,true,false,DESC,null,false,false,"No Balls",SUM,null,OPTIONAL,false,true,true),
   OPPOSITION("opposition","Opposition",true,OPTIONAL,false,true,null,null,true,false,null,null,null,ALWAYS_HIDE,false,false,false),
   OVERS("overs","Overs",true,OPTIONAL,false,false,null,null,false,false,null,null,null,ALWAYS_HIDE,false,false,false),
@@ -37,19 +35,25 @@ public enum Column {
   PLAYER_NAME("player_name","Player",true,ALWAYS_SHOW,true,true,ASC,null,true,false,null,null,null,ALWAYS_HIDE,false,false,false),
   POSITION("position","Position",true,OPTIONAL,false,true,ASC,"dec2NoTrail",true,false,"Avg Position",MEAN,null,OPTIONAL,false,false,true),
   RESULT("result","Result",true,OPTIONAL,false,true,null,null,true,false,null,null,null,ALWAYS_HIDE,false,false,false),
+  RESULT_DETAILS("result_details","Result",true,ALWAYS_SHOW,true,false,ASC,null,false,false,"Result",null,null,ALWAYS_HIDE,false,false,false),
   RUNS("runs","Runs",true,OPTIONAL,true,false,DESC,null,false,false,"Runs",SUM,null,OPTIONAL,true,true,true),
   RUN_OUTS("run_outs","Run Outs",true,OPTIONAL,true,false,DESC,null,false,false,"Run Outs",SUM,null,OPTIONAL,true,true,true),
   SEASON("season","Season",true,OPTIONAL,false,true,DESC,null,true,false,null,null,null,ALWAYS_HIDE,false,false,false),
   SIXES("sixes","Sixes",true,OPTIONAL,true,false,DESC,null,false,false,"Sixes",SUM,null,OPTIONAL,true,true,true),
   STUMPINGS("stumpings","Stumpings",true,OPTIONAL,true,false,DESC,null,false,false,"Stumpings",SUM,null,OPTIONAL,true,true,true),
   TEAM_TOTAL("team_total","Team Total",true,OPTIONAL,false,false,null,null,false,false,null,SUM,null,ALWAYS_HIDE,false,false,false),
-  WICKETS_BATTING("wickets_batting",null,true,ALWAYS_HIDE,false,false,null,null,false,false,"Wickets",SUM,null,OPTIONAL,true,false,false),
+  VICTIM_POSITION("victim_position",null,true,ALWAYS_HIDE,false,false,DESC,null,false,false,null,SUM,null,ALWAYS_HIDE,false,false,false),
+  VICTIM_RUNS("victim_runs",null,true,ALWAYS_HIDE,false,false,DESC,null,false,false,null,SUM,null,ALWAYS_HIDE,false,false,false),
+  WICKETS_BATTING("wickets_batting",null,true,ALWAYS_HIDE,false,false,DESC,null,false,false,"Wickets",SUM,null,OPTIONAL,true,false,false),
   WICKETS_BOWLING("wickets_bowling","Wickets",true,OPTIONAL,true,false,DESC,null,false,false,"Wickets",SUM,null,OPTIONAL,true,true,true),
   WICKET_TYPE("wicket_type","Wicket Type",true,OPTIONAL,true,true,null,null,true,false,null,null,null,ALWAYS_HIDE,false,false,false),
   WIDES("wides","Wides",true,OPTIONAL,true,false,DESC,null,false,false,"Wides",SUM,null,OPTIONAL,false,true,true),
+
   // Complex columns (must go here to avoid forward references),
   AVERAGE_BAT("average_bat",null,false,ALWAYS_HIDE,false,false,DESC,"dec2Always",false,false,"Average",COMPLEX,new Calculation(RUNS, WICKETS_BATTING, 1),OPTIONAL,true,false,false),
   AVERAGE_BOWL("average_bowl","Average",true,OPTIONAL,true,false,ASC,"dec2Always",false,false,"Average",COMPLEX,new Calculation(RUNS, WICKETS_BOWLING, 1),OPTIONAL,true,false,false),
+  AVG_VICTIM_POSITION("avg_victim_position",null,false,ALWAYS_HIDE,false,false,DESC,"dec2NoTrail",false,false,"Avg Victim Pos",COMPLEX,new Calculation(VICTIM_POSITION, WICKETS_BOWLING, 1),OPTIONAL,false,false,false),
+  AVG_VICTIM_RUNS("avg_victim_runs",null,false,ALWAYS_HIDE,false,false,DESC,"dec2NoTrail",false,false,"Avg Victim Runs",COMPLEX,new Calculation(VICTIM_RUNS, WICKETS_BOWLING, 1),OPTIONAL,false,false,false),
   ECONOMY("economy","Economy",true,OPTIONAL,true,false,ASC,"dec2Always",false,false,"Economy",COMPLEX,new Calculation(RUNS, DELIVERIES, 6),OPTIONAL,true,false,true),
   STRIKE_RATE_BAT("strike_rate_bat","Strike Rate",true,OPTIONAL,true,false,DESC,"dec2Always",false,false,"Strike Rate",COMPLEX,new Calculation(RUNS, DELIVERIES, 100),OPTIONAL,true,true,true),
   STRIKE_RATE_BOWL("strike_rate_bowl","Strike Rate",true,OPTIONAL,true,false,ASC,"dec2Always",false,false,"Strike Rate",COMPLEX,new Calculation(DELIVERIES, WICKETS_BOWLING, 1),OPTIONAL,true,true,true);

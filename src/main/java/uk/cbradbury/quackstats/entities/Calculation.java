@@ -13,6 +13,12 @@ public class Calculation {
     this.multiplier = multiplier;
   }
 
+  public Calculation(Column denominator, int multiplier) {
+    this.numeratorKey = null;
+    this.denominatorKey = denominator.getKey();
+    this.multiplier = multiplier;
+  }
+
   public String getNumeratorKey() {
     return numeratorKey;
   }

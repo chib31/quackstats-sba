@@ -61,7 +61,11 @@ public enum StatType {
           new StatColumn(DATE, 160, null),
           new StatColumn(RESULT, 170, null),
           new StatColumn(MATCH_FORMAT, 180, null),
-          new StatColumn(OVER_LENGTH, 190, null)
+          new StatColumn(OVER_LENGTH, 190, null),
+          new StatColumn(VICTIM_RUNS, null, null),
+          new StatColumn(VICTIM_POSITION, null, null),
+          new StatColumn(AVG_VICTIM_POSITION, null, 130),
+          new StatColumn(AVG_VICTIM_RUNS, null, 140)
       )
   ),
   FIELDING(
@@ -83,7 +87,17 @@ public enum StatType {
           new StatColumn(MATCH_FORMAT, 120, null),
           new StatColumn(FIELDING_MATCHES, 120, null, null, null)
       )
-  );
+  ),
+  RESULTS (
+      "fixture_summary",
+      List.of (
+          new StatColumn(ID, null, null),
+          new StatColumn(SEASON, null, null),
+          new StatColumn(FIXTURE, 10, null),
+          new StatColumn(RESULT_DETAILS, 20, null)
+      )
+  )
+  ;
 
   public final String dbTableName;
   public final List<StatColumn> columns;

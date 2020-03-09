@@ -39,3 +39,8 @@ BOWLER_NUMBER,bowler_number,Bowler Number,true,OPTIONAL,false,true,ASC,dec2NoTra
 HAT_TRICKS,hat_tricks,Hat Tricks,true,OPTIONAL,false,false,DESC,,false,false,Hat Tricks,SUM,,OPTIONAL,false,false,false
 INNINGS_LENGTH,innings_length,Innings Length,true,OPTIONAL,true,false,DESC,,false,false,,,,ALWAYS_HIDE,false,true,true
 FIELDING_MATCHES,fielding_matches,Matches,true,ALWAYS_HIDE,false,false,ASC,,false,false,Matches,SUM,,OPTIONAL,true,false,true
+RESULT_DETAILS,result_details,Result,true,ALWAYS_SHOW,true,false,ASC,,false,false,Result,,,ALWAYS_HIDE,false,false,false
+VICTIM_RUNS,victim_runs,,true,ALWAYS_HIDE,false,false,DESC,,false,false,,SUM,,ALWAYS_HIDE,false,false,false
+VICTIM_POSITION,victim_position,,true,ALWAYS_HIDE,false,false,DESC,,false,false,,SUM,,ALWAYS_HIDE,false,false,false
+AVG_VICTIM_RUNS,avg_victim_runs,,false,ALWAYS_HIDE,false,false,DESC,dec2NoTrail,false,false,Avg Victim Runs,COMPLEX,"new Calculation(VICTIM_RUNS, WICKETS_BOWLING, 1)",OPTIONAL,false,false,false
+AVG_VICTIM_POSITION,avg_victim_position,,false,ALWAYS_HIDE,false,false,DESC,dec2NoTrail,false,false,Avg Victim Pos,COMPLEX,"new Calculation(VICTIM_POSITION, WICKETS_BOWLING, 1)",OPTIONAL,false,false,false
