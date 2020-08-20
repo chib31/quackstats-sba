@@ -3,7 +3,7 @@ WITH t AS (
 ),
 
 f AS (INSERT INTO fixture VALUES
-  (default,(SELECT id FROM t),'2019-05-06',(SELECT id FROM team WHERE LOWER(name) LIKE '%clapham%'),2,'Barnes Elms CC','Limited Overs',20,default,FALSE,FALSE,(SELECT id FROM result_type WHERE name = 'won'))
+  (default,(SELECT id FROM t),'2019-05-06',(SELECT id FROM team WHERE LOWER(name) LIKE '%clapham cc%'),2,'Barnes Elms CC','Limited Overs',20,default,FALSE,FALSE,(SELECT id FROM result_type WHERE name = 'won'))
 RETURNING id),
 
 i AS (INSERT INTO innings VALUES

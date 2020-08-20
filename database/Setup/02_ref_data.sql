@@ -75,6 +75,8 @@ INSERT INTO player VALUES
 , (default, (SELECT id FROM this_team), 'James', NULL, 'Hewlett', NULL, 'J Hewlett', NULL, NULL, NULL)
 , (default, (SELECT id FROM this_team), 'Neil', NULL, 'Whitfield', NULL, 'N Whitfield', NULL, NULL, NULL)
 , (default, (SELECT id FROM this_team), 'Rich', NULL, 'Wills', NULL, 'R Wills', NULL, NULL, NULL)
+, (default, (SELECT id FROM this_team), 'Charles', NULL, 'Hatton', NULL, 'C Hatton', NULL, NULL, NULL)
+, (default, (SELECT id FROM this_team), 'Will', NULL, 'Hawkins', NULL, 'W Hawkins', NULL, NULL, NULL)
 ;
 
 -- Opposition
@@ -103,4 +105,7 @@ VALUES
 , (default, 'Merton Boars')
 , (default, 'Old Minchendenians')
 , (default, 'Mavericks CC')
+, (default, 'Clapham In CC')
+, (default, 'St Anne''s Allstars')
+, (default, 'Bricklayers Arms')
 ;
